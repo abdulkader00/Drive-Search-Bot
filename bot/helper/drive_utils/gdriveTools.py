@@ -87,7 +87,7 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             telegra_ph.edit_page(path = self.path[prev_page],
-                                 title = 'LoaderX',
+                                 title = 'GdriveMirrorCloud',
                                  html_content=content)
         return
 
@@ -101,7 +101,7 @@ class GoogleDriveHelper:
             INDEX += 1          
             if response:
                 if add_title_msg == True:
-                    msg = f'<h3>Search Results for : {fileName}</h3><br>@LoaderXbot #ProjektX<br><br>'
+                    msg = f'<h3>Search Results for : {fileName}</h3><br><br><h4>🔐 To Get Access To Drive Links <a href="https://groups.google.com/g/gdrivemirrorcloud">👉Join Google Group</a></h4><br><br>'
                     add_title_msg = False
                 msg += f"╾────────────╼<br><b>{DRIVE_NAME[INDEX]}</b><br>╾────────────╼<br>"
                 for file in response:
@@ -133,7 +133,7 @@ class GoogleDriveHelper:
             return "No Result Found :(", None
 
         for content in self.telegraph_content :
-            self.path.append(telegra_ph.create_page(title = 'LoaderX',
+            self.path.append(telegra_ph.create_page(title = 'Gdrive Mirror Cloud',
                                                 html_content=content )['path'])
 
         self.num_of_path = len(self.path)      
